@@ -7,12 +7,18 @@ import requests
 
 app = Flask(__name__)  
 
+
+@app.route('/integration-spec', methods=['GET'])
+def integration_spec():
+    # Return the JSON response
+    return jsonify(integration_spec)
+    
 @app.route('/notify', methods=['POST'])  
 def notify():  
     # Simulate receiving data (in a real application this would come from somewhere else)  
     client_phone = '+237698827753'  
     client_name = 'Sulem Vasitha'  
-    due_date = '19/02/2025'  
+    due_date = '25/02/2025'  
 
     # Check if the current date is past the due date (this is a basic check)  
     from datetime import datetime  
